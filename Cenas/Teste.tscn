@@ -1,0 +1,380 @@
+[gd_scene load_steps=19 format=3 uid="uid://cfp0a41f2lpin"]
+
+[ext_resource type="Script" path="res://Scripts/camera_trigger.gd" id="1_3fas6"]
+[ext_resource type="PackedScene" uid="uid://b2ranl7j8k6ed" path="res://Cenas/Player.tscn" id="2_kwnao"]
+[ext_resource type="PackedScene" uid="uid://b6a2ewlbytjat" path="res://Cenas/casa_principal.tscn" id="3_33ovj"]
+[ext_resource type="Script" path="res://Scripts/interactive.gd" id="3_712dp"]
+[ext_resource type="Script" path="res://Scripts/unpause.gd" id="4_42mrn"]
+[ext_resource type="PackedScene" uid="uid://dkplnueuq6gr1" path="res://Cenas/Inventario.tscn" id="4_47g2l"]
+[ext_resource type="Script" path="res://Scripts/PauseButton.gd" id="5_dd70n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qye55"]
+size = Vector3(0.960448, 0.721325, 1.0907)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6w6gp"]
+size = Vector3(0.504332, 0.721325, 1.00393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m235"]
+size = Vector3(0.362808, 0.721325, 0.813462)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvpa1"]
+size = Vector3(0.211685, 1.23713, 2.65322)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4vpm"]
+size = Vector3(0.588516, 1.0464, 1.71796)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnphh"]
+size = Vector3(0.886368, 1.0464, 0.910684)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4wx4"]
+size = Vector3(0.720894, 0.75672, 1.34983)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ysl7h"]
+size = Vector3(0.470797, 1.0464, 1.24297)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pewx8"]
+size = Vector3(5.16675, 1, 5.47718)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssa42"]
+size = Vector3(3.91656, 1.38721, 6.69058)
+
+[sub_resource type="Environment" id="Environment_lbuay"]
+background_energy_multiplier = 1.16
+ambient_light_color = Color(0.508087, 0.505335, 0.497844, 1)
+ambient_light_energy = 0.84
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_enabled = true
+fog_light_color = Color(0.816792, 0.766763, 0.805352, 1)
+fog_light_energy = 0.16
+fog_density = 0.0155
+
+[node name="Teste" type="Node3D"]
+
+[node name="Cameras" type="Node" parent="." groups=["cameras"]]
+
+[node name="SubViewport" type="SubViewport" parent="Cameras"]
+
+[node name="Camera3D4" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.335452, 0.395148, -0.855178, 0, 0.907777, 0.419452, 0.942057, 0.140706, -0.304516, -1.639, 3.94783, -1.847)
+current = true
+fov = 90.0
+
+[node name="Area3D1" type="Area3D" parent="Cameras/Camera3D4"]
+transform = Transform3D(0.942057, 0, 0.335452, 0.140706, 0.907777, -0.395148, -0.304515, 0.419452, 0.855179, 7.56673, -39.7394, -22.1229)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D4/Area3D1"]
+transform = Transform3D(10.5191, -2.62901e-13, 5.34328e-12, -4.54747e-12, 1, -3.09571e-12, -1.81899e-11, 1.04716e-12, 3.87243, -6.12536, 42.0842, -3.64659)
+shape = SubResource("BoxShape3D_qye55")
+
+[node name="Camera3D12" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.792812, 0, 0.609467, 0, 1, 0, -0.609467, 0, -0.792812, -7.9284, 1.898, -13.4666)
+fov = 61.2
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D12"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D12/Area3D2"]
+transform = Transform3D(5.63083, 0, -3.27089, 0, 1, 0, 8.88511, 0, 2.07289, -3.48768, 41.752, -3.07782)
+shape = SubResource("BoxShape3D_qye55")
+
+[node name="Camera3D13" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.623211, 0.470651, -0.624576, 0, 0.798636, 0.601815, 0.782054, 0.375057, -0.497719, -12.0763, 3.678, -15.8548)
+fov = 61.2
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D13"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D13/Area3D2"]
+transform = Transform3D(-7.20884, -0.583104, -1.68947, -4.90646, 0.811525, -1.36291, 5.88311, -0.0377005, -3.20685, -5.20246, 42.9587, -4.01487)
+shape = SubResource("BoxShape3D_6w6gp")
+
+[node name="Camera3D14" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.540989, -0.17773, 0.822036, 0, 0.977416, 0.211324, -0.84103, -0.114324, 0.528771, -9.7846, 2.044, -10.8637)
+fov = 61.2
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D14"]
+transform = Transform3D(0.77537, -0.00241697, 0.631503, 0.135087, 0.97748, -0.162121, -0.61689, 0.211012, 0.758235, 6.90787, -46.352, 1.5388)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D14/Area3D2"]
+transform = Transform3D(10.4851, 9.31323e-10, -0.310629, 1.37836e-07, 1, 6.8394e-10, 0.843802, 4.55475e-09, 3.85993, 4.32514, 43.6476, -16.5835)
+shape = SubResource("BoxShape3D_2m235")
+
+[node name="Camera3D15" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.289851, -0.202253, 0.935457, 0, 0.977416, 0.211325, -0.957072, 0.0612527, -0.283305, 4.57287, 1.813, -16.6985)
+fov = 61.2
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D15"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D15/Area3D2"]
+transform = Transform3D(-4.27408, -0.220466, -3.4338, -0.928194, 0.975388, -0.782514, 9.56667, -0.00386149, -1.61003, -3.86773, 43.5435, -2.09939)
+shape = SubResource("BoxShape3D_pvpa1")
+
+[node name="Camera3D11" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.993668, 0, -0.112353, 0, 1, 0, 0.112353, 0, 0.993668, -12.728, 1.57, 4.363)
+fov = 57.8
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D11"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D11/Area3D2"]
+transform = Transform3D(10.5191, 0, 3.08501e-07, 0, 1, 0, 0, 0, 3.87241, -2.9836, 42.0279, -4.5027)
+shape = SubResource("BoxShape3D_h4vpm")
+
+[node name="Camera3D11" type="Camera3D" parent="Cameras/Camera3D11"]
+transform = Transform3D(-0.016878, 5.24441e-05, -0.999857, -7.17178e-05, 1, 5.36622e-05, 0.999857, 7.26133e-05, -0.016878, 1.72022, 0.0671272, -9.24833)
+fov = 57.8
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D11/Camera3D11"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D11/Camera3D11/Area3D2"]
+transform = Transform3D(10.5191, -9.09495e-13, 2.71946e-07, 1.09139e-11, 1, -9.19681e-09, 0, 0, 3.87241, -4.55016, 42.028, -4.06595)
+shape = SubResource("BoxShape3D_pnphh")
+
+[node name="Camera3D16" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.364877, 0.390533, -0.845191, 0, 0.907778, 0.419452, 0.931056, -0.153048, 0.331227, -15.1, 3.39, 4.867)
+fov = 57.8
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D16"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D16/Area3D2"]
+transform = Transform3D(-4.57392, -0.451915, -3.01628, -1.69529, 0.89005, -1.65131, 9.31972, -0.0598875, -1.78069, -1.63054, 44.0559, -3.95099)
+shape = SubResource("BoxShape3D_y4wx4")
+
+[node name="Camera3D17" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.464842, -0.37138, 0.803741, 0, 0.907777, 0.419452, -0.885394, 0.194979, -0.421973, -7.608, 2.785, -1.937)
+fov = 57.8
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D17"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D17/Area3D2"]
+transform = Transform3D(8.05211, -0.407093, -1.92968, 3.75764, 0.912981, -0.763305, 5.62984, -0.0271221, 3.26941, -2.35647, 43.8378, -6.06246)
+shape = SubResource("BoxShape3D_ysl7h")
+
+[node name="Camera3D6" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(-0.690883, -0.30325, 0.656293, 0, 0.907777, 0.419452, -0.722967, 0.289792, -0.627168, 0.546206, 2.34583, 1.16372)
+fov = 90.0
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D6"]
+transform = Transform3D(-0.113203, -1.49012e-08, 0.993572, 1.49012e-08, 1, -2.98023e-08, -0.993572, -4.47035e-08, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D6/Area3D2"]
+transform = Transform3D(-0.573864, -0.416757, 0.704978, -0.30325, 0.907777, 0.289793, -0.760736, -0.0474829, -0.647321, -6.06926, 43.0841, -3.99455)
+shape = SubResource("BoxShape3D_pewx8")
+
+[node name="Camera3D8" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.515203, 0.359499, -0.778027, -1.90768e-08, 0.907777, 0.419452, 0.857068, -0.216103, 0.46769, -14.8709, 1.95078, 10.4668)
+fov = 90.0
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D8"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D8/Area3D2"]
+transform = Transform3D(0.557906, -0.416756, 0.717673, 0.214193, 0.907777, 0.360641, -0.801787, -0.0474833, 0.59572, -6.69059, 43.2429, -3.82325)
+shape = SubResource("BoxShape3D_pewx8")
+
+[node name="Camera3D10" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.94739, -0.0625213, 0.313916, 0.00482312, 0.983415, 0.181307, -0.320045, -0.170254, 0.931979, -0.597998, 1.62434, 15.0889)
+fov = 45.4
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D10"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D10/Area3D2"]
+transform = Transform3D(-0.419145, -0.180688, -0.889758, -0.0625214, 0.983415, -0.170254, 0.905764, -0.0157324, -0.42349, -5.50617, 42.9655, -3.57099)
+shape = SubResource("BoxShape3D_ssa42")
+
+[node name="Camera3D9" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.968583, 0.0534025, -0.242889, 0, 0.976672, 0.214735, 0.24869, -0.207989, 0.945988, -8.75427, 1.95078, 13.8882)
+fov = 48.8
+
+[node name="Area3D2" type="Area3D" parent="Cameras/Camera3D9"]
+transform = Transform3D(-0.113203, 0, 0.993572, 0, 1, 0, -0.993572, 0, -0.113203, 3.45559, -42.936, -10.5606)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D9/Area3D2"]
+transform = Transform3D(0.0605429, -9.28259e-08, -0.998165, -4.47035e-08, 1, -9.12696e-08, 0.998166, 3.67569e-08, 0.060543, -6.18095, 0.769642, 9.50859)
+top_level = true
+shape = SubResource("BoxShape3D_pewx8")
+
+[node name="Camera3D3" type="Camera3D" parent="Cameras" groups=["cameras"]]
+transform = Transform3D(0.512043, 0.360293, -0.779744, 0, 0.907777, 0.419452, 0.85896, -0.214778, 0.464821, -0.01, 1.97483, 12.737)
+fov = 90.0
+
+[node name="Area3D3" type="Area3D" parent="Cameras/Camera3D3"]
+transform = Transform3D(-0.911403, 0, 0.411514, 0.172611, 0.907777, 0.38229, -0.373563, 0.419452, -0.827351, -18.2372, -72.1042, -49.7373)
+script = ExtResource("1_3fas6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D3/Area3D3"]
+transform = Transform3D(6.23934, 0, -0.664938, 0, 1, 0, 0.850912, 0, 4.87568, -20.3419, 85.0593, -2.49495)
+shape = SubResource("BoxShape3D_qye55")
+
+[node name="world" type="Node" parent="."]
+
+[node name="Player" parent="world" instance=ExtResource("2_kwnao")]
+transform = Transform3D(-0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, 4.87654, 0.0863661, 0)
+
+[node name="Interaction" type="Node3D" parent="world/Player"]
+script = ExtResource("3_712dp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world"]
+transform = Transform3D(1, -1.74846e-07, -7.64276e-15, 0, -4.37114e-08, 1, -1.74846e-07, -1, -4.37114e-08, 0, 0.935694, 0)
+light_color = Color(0.714329, 0.550654, 0.74407, 1)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource("Environment_lbuay")
+
+[node name="Mapa" type="Node3D" parent="."]
+
+[node name="CasaPrincipal" parent="Mapa" instance=ExtResource("3_33ovj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.33, 0)
+metadata/_edit_lock_ = true
+
+[node name="Luzes" type="Node3D" parent="Mapa"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18355, 2.11226, 10.4779)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_size = 0.01
+light_specular = 0.338
+omni_range = 4.51342
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18355, 2.83885, -3.99904)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_size = 0.01
+light_specular = 0.338
+omni_range = 4.51342
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2335, 2.11226, 9.38549)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_specular = 0.338
+omni_range = 3.46339
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25769, 2.11226, 8.02863)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_specular = 0.338
+omni_range = 3.98571
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2303, 2.57628, -7.68573)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_specular = 0.338
+omni_range = 3.98571
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9046, 2.57628, -16.6477)
+light_color = Color(0.663361, 0.66603, 0.634152, 1)
+light_energy = 2.131
+light_specular = 0.338
+omni_range = 3.98571
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30901, 0.587607, 0.00111914)
+light_color = Color(0.959765, 0.689721, 0.338043, 1)
+light_energy = 5.363
+light_indirect_energy = 0.14
+light_size = 0.717
+light_specular = 0.0
+omni_range = 1.02588
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Mapa/Luzes"]
+transform = Transform3D(1, 0, 0, 0, 0.0222512, 0.999752, 0, -0.999752, 0.0222512, 5.17974, 3.51615, 0.0349501)
+light_color = Color(0.715041, 0.700737, 0.39163, 1)
+light_energy = 2.616
+spot_range = 5.13557
+spot_angle = 21.8233
+
+[node name="Pauseinventory" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseButton" type="Button" parent="Pauseinventory"]
+process_mode = 3
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 910.0
+offset_top = 34.0
+offset_right = 1107.0
+offset_bottom = 77.0
+grow_horizontal = 0
+action_mode = 0
+text = "Retomar"
+script = ExtResource("4_42mrn")
+
+[node name="InventoryPanel" parent="Pauseinventory" instance=ExtResource("4_47g2l")]
+process_mode = 3
+script = ExtResource("5_dd70n")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Interaction" type="Label" parent="CanvasLayer"]
+offset_left = 368.0
+offset_top = 562.0
+offset_right = 768.0
+offset_bottom = 601.0
+theme_type_variation = &"HeaderLarge"
+text = "Não parece ter nada por aqui."
+
+[connection signal="body_entered" from="Cameras/Camera3D4/Area3D1" to="Cameras/Camera3D4/Area3D1" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D4/Area3D1" to="Cameras/Camera3D4/Area3D1" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D12/Area3D2" to="Cameras/Camera3D12/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D12/Area3D2" to="Cameras/Camera3D12/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D13/Area3D2" to="Cameras/Camera3D13/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D13/Area3D2" to="Cameras/Camera3D13/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D14/Area3D2" to="Cameras/Camera3D14/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D14/Area3D2" to="Cameras/Camera3D14/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D15/Area3D2" to="Cameras/Camera3D15/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D15/Area3D2" to="Cameras/Camera3D15/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D11/Area3D2" to="Cameras/Camera3D11/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D11/Area3D2" to="Cameras/Camera3D11/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D11/Camera3D11/Area3D2" to="Cameras/Camera3D11/Camera3D11/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D11/Camera3D11/Area3D2" to="Cameras/Camera3D11/Camera3D11/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D16/Area3D2" to="Cameras/Camera3D16/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D16/Area3D2" to="Cameras/Camera3D16/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D17/Area3D2" to="Cameras/Camera3D17/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D17/Area3D2" to="Cameras/Camera3D17/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D6/Area3D2" to="Cameras/Camera3D6/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D6/Area3D2" to="Cameras/Camera3D6/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D8/Area3D2" to="Cameras/Camera3D8/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D8/Area3D2" to="Cameras/Camera3D8/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D10/Area3D2" to="Cameras/Camera3D10/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D10/Area3D2" to="Cameras/Camera3D10/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D9/Area3D2" to="Cameras/Camera3D9/Area3D2" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D9/Area3D2" to="Cameras/Camera3D9/Area3D2" method="exit_trigger"]
+[connection signal="body_entered" from="Cameras/Camera3D3/Area3D3" to="Cameras/Camera3D3/Area3D3" method="enter_trigger"]
+[connection signal="body_exited" from="Cameras/Camera3D3/Area3D3" to="Cameras/Camera3D3/Area3D3" method="exit_trigger"]
+[connection signal="child_entered_tree" from="world/Player/Interaction" to="world/Player" method="body_entered"]
+[connection signal="child_exiting_tree" from="world/Player/Interaction" to="world/Player" method="body_exited"]
+[connection signal="pressed" from="Pauseinventory/PauseButton" to="Pauseinventory/InventoryPanel" method="_on_pause_button_pressed"]

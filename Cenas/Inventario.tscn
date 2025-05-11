@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkplnueuq6gr1"]
+
+[ext_resource type="Texture2D" uid="uid://bkt67up4fghxj" path="res://Assets/inventario/iten.png" id="1_o6vhx"]
+[ext_resource type="Texture2D" uid="uid://rtx223f6idar" path="res://Assets/inventario/inventario.png" id="2_nre3x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kaaab"]
+
+[node name="InventoryPanel" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 833.0
+offset_top = 196.0
+offset_right = 833.0
+offset_bottom = 196.0
+
+[node name="Panel" type="Panel" parent="Control"]
+material = SubResource("CanvasItemMaterial_kaaab")
+layout_mode = 0
+offset_left = -833.0
+offset_top = -196.0
+offset_right = 325.0
+offset_bottom = 453.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 191.0
+offset_right = 1124.0
+offset_bottom = 601.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="TextureRect8" type="TextureRect" parent="Control/Panel/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o6vhx")
+stretch_mode = 3
+
+[node name="Inventario" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(579.778, 322)
+scale = Vector2(0.601852, 0.601852)
+texture = ExtResource("2_nre3x")

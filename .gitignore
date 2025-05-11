@@ -1,0 +1,43 @@
+# Godot 4+ specific ignores
+.godot/
+
+
+# Arquivos temporários do Godot
+.godot/
+*.translation
+export_presets.cfg
+.import/
+*.import
+
+# Diretórios de compilação
+.mono/
+.build/
+data_*/
+mono_crash*
+
+# Arquivos de exportação
+export/
+builds/
+*.pck
+*.exe
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*.lnk
+
+# IDEs e editores
+.vscode/
+.idea/
+*.tmp
+*.bak
+*.swp
+
+# Arquivos específicos de Godot que podem ser ignorados
+*.tmp
+.mono/
+*.pdb
+*.so
+
+# Arquivos específicos de debug
+*.log
